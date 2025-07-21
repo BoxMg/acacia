@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acacia de Constantinopla</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --verde: #388e3c;
+      --verde-oscuro: #1b5e20;
+      --fondo: #e8f5e9;
+      --blanco: #ffffff;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--fondo);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .contenedor {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--verde);
+      margin-bottom: 5px;
+    }
+
+    .subtitulo {
+      text-align: center;
+      color: #4caf50;
+      margin-bottom: 20px;
+      font-size: 1.1em;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 3px solid #c8e6c9;
+      filter: brightness(0.97);
+    }
+
+    .bloque {
+      background-color: var(--blanco);
+      padding: 18px 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      opacity: 0;
+    }
+
+    .bloque.visible {
+      animation: aparecer 0.7s ease forwards;
+    }
+
+    @keyframes aparecer {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--verde-oscuro);
+    }
+
+    p, li {
+      line-height: 1.6;
+      margin: 0 0 10px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .arriba {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--verde);
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      padding: 20px 10px;
+      font-size: 1em;
+    }
+
+    @media (max-width: 480px) {
+      .contenedor {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.6em;
+      }
+
+      .subtitulo {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Acacia de Constantinopla</h1>
+    <p class="subtitulo">También conocida como Árbol de la Seda</p>
+    
+    <img src="acacia.jpg" alt="Acacia de Constantinopla">
+
+    <div class="bloque">
+      <h2>Nombre científico:</h2>
+      <p><em>Albizia julibrissin</em></p>
+    </div>
+
+    <div class="bloque">
+      <h2>Información general:</h2>
+      <ul>
+        <li><strong>Familia:</strong> Fabaceae</li>
+        <li><strong>Origen:</strong> Asia (Irán, China, Corea)</li>
+        <li><strong>Altura máxima:</strong> 5 a 12 metros</li>
+      </ul>
+    </div>
+
+    <div class="bloque">
+      <h2>Características:</h2>
+      <p>Árbol caducifolio ornamental, con hojas finas y plumosas. En verano produce flores rosadas con aspecto sedoso.</p>
+    </div>
+
+    <div class="bloque">
+      <h2>Cuidados:</h2>
+      <p>Prefiere climas cálidos, suelos bien drenados y exposición directa al sol. No requiere mucha agua.</p>
+    </div>
+
+    <div class="bloque">
+      <h2>Usos:</h2>
+      <p>Muy utilizado como árbol decorativo en parques y jardines. Sus flores atraen abejas y mariposas.</p>
+    </div>
+  </div>
+
+  <footer>
+    Página realizada por Emmanuel Arrieta Morales 9-02
+  </footer>
+
+  <button class="arriba" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+  <script>
+    const bloques = document.querySelectorAll('.bloque');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    bloques.forEach(bloque => observer.observe(bloque));
+  </script>
+</body>
+</html>
