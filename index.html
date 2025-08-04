@@ -2,77 +2,187 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bonga tronadora</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acacia de Constantinopla</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --verde: #6ab04c;
-      --verde-oscuro: #218c74;
-      --fondo: #f1f8f5;
+      --lila: #a189c9;
+      --lila-oscuro: #6d4c9c;
+      --fondo: #f3eefc;
       --blanco: #ffffff;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background-color: var(--fondo);
-      color: #333;
       margin: 0;
       padding: 0;
+      color: #333;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: var(--blanco);
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    .contenedor {
+      max-width: 600px;
+      margin: auto;
       padding: 20px;
     }
 
     h1 {
-      color: var(--verde-oscuro);
       text-align: center;
+      color: var(--lila);
+      margin-bottom: 5px;
     }
 
-    h2 {
-      color: var(--verde);
-      margin-top: 30px;
-    }
-
-    p {
-      line-height: 1.6;
+    .subtitulo {
+      text-align: center;
+      color: #9a7fbc;
+      margin-bottom: 20px;
+      font-size: 1.1em;
     }
 
     img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 20px auto;
-      border-radius: 8px;
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 3px solid #dcd2f2;
+      filter: brightness(0.97);
     }
 
+    .bloque {
+      background-color: var(--blanco);
+      padding: 18px 20px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      opacity: 0;
+    }
+
+    .bloque.visible {
+      animation: aparecer 0.7s ease forwards;
+    }
+
+    @keyframes aparecer {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--lila-oscuro);
+    }
+
+    p, li {
+      line-height: 1.6;
+      margin: 0 0 10px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .arriba {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--lila);
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      padding: 20px 10px;
+      font-size: 1em;
+    }
+
+    @media (max-width: 480px) {
+      .contenedor {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.6em;
+      }
+
+      .subtitulo {
+        font-size: 1em;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Bonga tronadora</h1>
-    <img src="bonga.jpg" alt="Bonga tronadora - Hura crepitans">
+  <div class="contenedor">
+    <h1>Acacia de Constantinopla</h1>
+    <p class="subtitulo">También conocida como Árbol de la Seda</p>
+    
+    <img src="acacia.jpg" alt="Acacia de Constantinopla">
 
-    <h2>Información general:</h2>
-    <p><strong>Familia:</strong> Euphorbiaceae</p>
-    <p><strong>Origen:</strong> América tropical</p>
-    <p><strong>Altura promedio:</strong> 20 a 30 metros</p>
+    <div class="bloque">
+      <h2>Nombre científico:</h2>
+      <p><em>Albizia julibrissin</em></p>
+    </div>
 
-    <h2>Características:</h2>
-    <p>Es un árbol de gran tamaño con tronco recto, espinas prominentes y hojas grandes. Su fruto es una cápsula leñosa que explota al madurar, dispersando las semillas con fuerza, lo que le da su nombre de "tronadora". Su savia es tóxica e irritante.</p>
+    <div class="bloque">
+      <h2>Información general:</h2>
+      <ul>
+        <li><strong>Familia:</strong> Fabaceae</li>
+        <li><strong>Origen:</strong> Asia (Irán, China, Corea)</li>
+        <li><strong>Altura máxima:</strong> 5 a 12 metros</li>
+      </ul>
+    </div>
 
-    <h2>Cuidados:</h2>
-    <p>Crece bien en suelos húmedos, profundos y bien drenados. Prefiere climas cálidos y húmedos. No requiere muchos cuidados una vez establecido, pero debe manejarse con precaución debido a su toxicidad.</p>
+    <div class="bloque">
+      <h2>Características:</h2>
+      <p>Es un árbol caducifolio de copa ancha y extendida, con hojas compuestas, finas y plumosas. En verano produce flores llamativas, con largos estambres sedosos que le dan un aspecto esponjoso. Su tronco es delgado y de corteza gris clara.</p>
+    </div>
 
-    <h2>Usos:</h2>
-    <p>Se utiliza como árbol de sombra o ornamental en zonas rurales. La madera puede usarse para construcciones livianas, pero se evita el contacto directo con la savia. También es valioso para la reforestación en su hábitat natural.</p>
+
+    <div class="bloque">
+      <h2>Cuidados:</h2>
+      <p>Requiere climas cálidos y templados para crecer con vigor. Necesita sol directo durante la mayor parte del día y prefiere suelos bien drenados, ligeros y fértiles. Es resistente a la sequía una vez establecida, pero agradece riegos moderados en épocas secas. No tolera suelos encharcados. No necesita mucha poda, solo para formar su estructura y retirar ramas secas.</p>
+    </div>
+
+
+    <div class="bloque">
+      <h2>Usos:</h2>
+      <p>Se utiliza principalmente como árbol decorativo en jardines, avenidas y parques por su floración atractiva y sombra ligera. Sus flores atraen polinizadores como abejas, mariposas y colibríes. También puede usarse para controlar la erosión gracias a su sistema radicular, y en algunos lugares se valora con fines medicinales por sus propiedades relajantes en la medicina tradicional china.</p>
+    </div>
+
   </div>
+
+  <footer>
+    Sisley Lorduy Alvear 9-02
+  </footer>
+
+  <button class="arriba" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+  <script>
+    const bloques = document.querySelectorAll('.bloque');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    bloques.forEach(bloque => observer.observe(bloque));
+  </script>
 </body>
 </html>
-
